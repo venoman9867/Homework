@@ -119,7 +119,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     }
 
     @Override
-    public Iterator<V> iterator() {
+    public Iterator<V> iterator() {//по заданию не требовалось сделать итератор
         return null;
     }
 

@@ -7,6 +7,7 @@ public class Main {
         map.put("C", "Chicken");
         map.put("A", "Android");
         map.put("B", "Beta");
+        //map.remove("C");
         System.out.println(map.get("C"));
         System.out.println(map.get(("A")));
         System.out.println(map.get("B"));

@@ -92,9 +92,19 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
     @Override
     public void remove(K key) {
-        //тут надо вычислить хеш по кею удалить узел с таким же хеш кодом
-        // и связать узлы которые оборвались если они есть
-        //наверное еще проверить по equals вдруг там разные объекты с одинаковым хешкодом
+        //вычисляем хешкод ключа
+        int hashValue=hash(key);
+        //находим ячейку массива где лежит наш узел
+        int i = indexFor(hashValue, table.length);
+        //теперь обходим LinkedList
+        for (Node node = table[i]; node != null; node = node.next) {
+            //И если нашли нужное нам значение делаем его null
+            if (node.key.equals(key) && hashValue == node.hash) {
+                node=null;// но почему-то не работает(
+            }
+        }
+
+
     }
 
     @Override
